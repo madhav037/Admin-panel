@@ -11,10 +11,6 @@ export default function Login() {
   let [emailNumber, setEmailNumber] = useState("");
   let [password, setPassword] = useState("");
 
-  function checkEmail() {
-    
-  }
-
   return (
     <>
       <div className="blackLayer"></div>
@@ -39,9 +35,6 @@ export default function Login() {
           type="password"
           id="password"
           placeholder="Password"
-          onBlur={()=> {
-            checkEmail()
-          }}
           onChange={(e) => {
             setPassword((password = e.target.value));
           }}
@@ -63,6 +56,8 @@ export default function Login() {
                 if (data === "success") {
                   // ! ADD Route to next page
                   console.log("add route to next page");
+                }else {
+                  alert("wrong password")
                 }
               });
           }}
