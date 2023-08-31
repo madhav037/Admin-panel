@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
@@ -10,6 +11,7 @@ export default function Login() {
 
   let [emailNumber, setEmailNumber] = useState("");
   let [password, setPassword] = useState("");
+  const navigator = useNavigate()
 
   return (
     <>
@@ -56,6 +58,7 @@ export default function Login() {
                 if (data === "success") {
                   // ! ADD Route to next page
                   console.log("add route to next page");
+                  navigator("/Home")
                 }else {
                   alert("wrong password")
                 }
